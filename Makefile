@@ -14,9 +14,9 @@ CC := gcc
 
 NAME := minishell
 
-FLAGS := -Wall -Wextra -Werror
+FLAGS :=
 
-SOURCE := Sources/check.c Sources/do_something.c Sources/env.c Sources/ft.c Sources/ft_strsplit.c Sources/list.c Sources/minishell.c
+SOURCE := Sources/env.c Sources/helper.c Sources/do_something.c Sources/do_echo.c Sources/ft_strsplit.c Sources/main.c Sources/readline.c Sources/ft.c Sources/ft_2.c
 
 OBJECTS := $(SOURCE:.c=.o)
 
@@ -26,7 +26,7 @@ RED= \033[1;31m
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@$(CC) $(FLAGS) $(OBJECTS) -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJECTS) -o $(NAME) -lreadline -ledit
 	@echo "$(GREEN)Project is successfully compiled"
 
 $(OBJECTS): %.o : %.c

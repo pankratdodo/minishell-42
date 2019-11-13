@@ -19,40 +19,49 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <signal.h>
+# include <readline/readline.h>
+# include <readline/history.h>
 
 typedef	struct		s_list
 {
 	struct s_list	*next;
 	void			*content;
-	int				n;
 }					t_list;
 
-int					do_setenv(char **com, t_list *all);
-int					do_unsetenv(char **com, t_list *all);
-void				do_cd(char **str);
 void				do_echo(char **str, t_list *all);
-void				do_env(t_list *env);
-void				do_also(char **my_com, t_list *all);
+int					check_env_echo(char *com, t_list *all);
+char				ft_strchr_my(const char *s);
+
+int					do_also(char **com, t_list *all, char **env);
+char				*find_path(char *com, t_list *all);
+t_list				*do_cd(char **str, t_list *all);
+void				do_cd_return(t_list *all);
+t_list				*change_oldpwd(t_list *all);
 
 t_list				*add_list_env(char **env);
-char				*com_renew(char **command, int to_free);
-int					ft_minishell(char *command, t_list *all);
-void				check_vvod(char *com, t_list *all);
-char				*add_com(char **com, char c);
+void				do_env(t_list *all);
+t_list				*do_unsetenv(char **com, t_list *all);
+t_list				*do_setenv(char **com, t_list *all);
+char				*set_with_kov(char *com);
+
+void				check_vvod(char *com, t_list *all, char **env);
 int					ft_error(int k, char *str);
+
+void				initialize_readline(void);
+
 t_list				*create_list(void *content);
 t_list				*list_add_back(t_list *list, void *content);
-t_list				*list_remove_at(t_list *lst, int at, int to_free);
-char				*parse_env(t_list *env, char *name);
+t_list				*parse_env(t_list *env, char *name);
 
-size_t				ft_strlen(const char *s);
-char				**ft_strsplit(char const *s, char c);
-int					ft_strcmp(const char *s1, const char *s2);
+char				*ft_strchr(const char *s, int c);
+size_t				ft_strlen(const char *src);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 void				ft_putstr(char const *s);
+int					ft_strcmp(const char *s1, const char *s2);
 int					kol_args(char **str);
-char				ft_strchr_my(const char *s);
-char				*ft_strjoin(char const *s1, char const *s2, int to_free);
-int					ft_free_str(char *str);
 char				**ft_free_split(char **d);
+char				*ft_strjoin(char const *s1, char const *s2, int to_free);
+char				*ft_strdup(const char *s1);
+char				**ft_strsplit(char const *s, char c);
 
-#endif //MINISHELL_MINISHELL_H
+#endif

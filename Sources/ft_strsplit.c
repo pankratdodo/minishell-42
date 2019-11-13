@@ -12,18 +12,6 @@
 
 #include "../Includes/minishell.h"
 
-static char		**ft_free(char **s, int j)
-{
-	while (j)
-	{
-		j--;
-		ft_free_str(*s);
-	}
-	free(s);
-	s = NULL;
-	return (0);
-}
-
 static int		ft_s(char *str, char c)
 {
 	int			i;
@@ -103,7 +91,7 @@ char			**ft_strsplit(char const *s, char c)
 		if (s[i] != c)
 		{
 			if (!(s1[j] = ft_mem((char*)(&s[i]), ft_size((char*)&s[i], c))))
-				return (ft_free(&s1[j], j));
+				return (ft_free_split(&s1[j]));
 			j++;
 			i += ft_size((char*)&s[i], c);
 		}
