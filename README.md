@@ -13,13 +13,16 @@ will be monitored by its parent’s process.
 ```
 git clone https://github.com/pankratdodo/minishell-42.git
 ```
-2. `cd`into directrory and run `make`
+2. `cd` into directrory and run `make`
 ```
 make
 ./minishell
 ```
 ## Main project instructions
 #### General Instructions
-1. Project must be written in C in accordance with [the Norm](https://github.com/R4meau/minishell/blob/master/norme.en.pdf).
-2. Program cannot have memory leaks.
-3. 
+- Project must be written in C in accordance with [the Norm](https://github.com/R4meau/minishell/blob/master/norme.en.pdf).
+- Program cannot have memory leaks.
+- No Segmentation fault, bus error, double free, etc.
+- This interpreter must display a prompt (a simple `$> ` for example) and wait till you type a command line, validated by pressing enter.
+- The prompt is shown again only once the command has been completely executed.
+-  
