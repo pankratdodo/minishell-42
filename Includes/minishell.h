@@ -32,8 +32,8 @@ void				do_echo(char **str, t_list *all);
 int					check_env_echo(char *com, t_list *all);
 char				ft_strchr_my(const char *s);
 
-int					do_also(char **com, t_list *all, char **env);
-char				*find_path(char *com, t_list *all);
+void				do_cd_without(t_list *all);
+void				do_cd_sign(char *str, t_list *all);
 t_list				*do_cd(char **str, t_list *all);
 void				do_cd_return(t_list *all);
 t_list				*change_oldpwd(t_list *all);
@@ -49,6 +49,8 @@ int					ft_error(int k, char *str);
 
 void				initialize_readline(void);
 
+int					do_also(char **com, t_list *all, char **env);
+char				*find_path(char *com, t_list *all);
 t_list				*create_list(void *content);
 t_list				*list_add_back(t_list *list, void *content);
 t_list				*parse_env(t_list *env, char *name);

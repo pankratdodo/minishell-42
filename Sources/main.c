@@ -39,10 +39,16 @@ int			ft_error(int k, char *str)
 	return (1);
 }
 
-void		my_int(int ret)
+static void	my_int(int ret)
 {
 	ft_putstr("\n$> ");
 	ret = 0;
+}
+
+static void	do_help(void)
+{
+	ft_putstr("Available commands:\n");
+	ft_putstr("clear\ncd\necho\nsetenv\nunsetenv\nenv\nexit\n");
 }
 
 void		check_vvod(char *com, t_list *all, char **env)
@@ -61,12 +67,13 @@ void		check_vvod(char *com, t_list *all, char **env)
 			all = do_setenv(my_com, all);
 		else if (!(ft_strcmp(my_com[0], "unsetenv")))
 			all = do_unsetenv(my_com, all);
-		else if (!(ft_strcmp(my_com[0], "env")))
-			do_env(all);
-		else if (!(ft_strcmp(my_com[0], "/usr/bin/env")))
+		else if (!(ft_strcmp(my_com[0], "env")) ||
+			!(ft_strcmp(my_com[0], "/usr/bin/env")))
 			do_env(all);
 		else if (!(ft_strcmp(my_com[0], "exit")))
 			exit(0);
+		else if (!(ft_strcmp(my_com[0], "help")))
+			do_help();
 		else
 			do_also(my_com, all, env);
 		ft_free_split(my_com);

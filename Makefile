@@ -14,9 +14,9 @@ CC := gcc
 
 NAME := minishell
 
-FLAGS :=
+FLAGS := -Wall -Wextra -Werror
 
-SOURCE := Sources/env.c Sources/helper.c Sources/do_something.c Sources/do_echo.c Sources/ft_strsplit.c Sources/main.c Sources/readline.c Sources/ft.c Sources/ft_2.c
+SOURCE := Sources/env.c Sources/helper.c Sources/do_cd.c Sources/do_echo.c Sources/ft_strsplit.c Sources/main.c Sources/readline.c Sources/ft.c Sources/ft_2.c
 
 OBJECTS := $(SOURCE:.c=.o)
 

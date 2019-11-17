@@ -18,7 +18,7 @@ char			*set_with_kov(char *com)
 	int			i;
 	int			j;
 
-	str = malloc(sizeof(ft_strlen(com - 2)));
+	str = malloc(ft_strlen(com - 2));
 	i = 0;
 	j = 0;
 	while (com[i] != '\0')
