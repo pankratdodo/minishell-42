@@ -30,16 +30,16 @@ make
 display the prompt again.
 - You must implement a series of builtins: `echo`, `cd`, `setenv`, `unsetenv`, `env`, `exit`.
 - Allowed to use the following functions:
-  - malloc, free
-  - access
-  - open, close, read, write
-  - opendir, readdir, closedir
-  - getcwd, chdir
-  - stat, lstat, fstat
-  - fork, execve
-  - wait, waitpid, wait3, wait4
-  - signal, kill
-  - exit
+  - *malloc, free*
+  - *access*
+  - *open, close, read, write*
+  - *opendir, readdir, closedir*
+  - *getcwd, chdir*
+  - *stat, lstat, fstat*
+  - *fork, execve*
+  - *wait, waitpid, wait3, wait4*
+  - *signal, kill*
+  - *exit*
 #### Bonus Part
 - Management of signals and in particular Ctrl-C. The use of global variables is
 allowed as part of this bonus.
