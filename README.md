@@ -18,3 +18,8 @@ git clone https://github.com/pankratdodo/minishell-42.git
 make
 ./minishell
 ```
+### Main project instructions
+## General Instructions
+1. Project must be written in C in accordance with [the Norm](https://github.com/R4meau/minishell/blob/master/norme.en.pdf).
+2. Program cannot have memory leaks.
+3. 
