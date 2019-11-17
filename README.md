@@ -1,6 +1,6 @@
 # Minishell
 
-## *As beautiful as a shell*
+*As beautiful as a shell*
 
 ## About
 Through the Minishell project, you will get to the core of the Unix system and explore
