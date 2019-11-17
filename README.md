@@ -9,8 +9,8 @@ a command inside a shell implies creating a new process, which execution and fin
 will be monitored by its parent’s process.
 
 ### Installation
-'''
+```
 git clone https://github.com/pankratdodo/minishell-42.git
 make
 ./minishell
-'''
+```
