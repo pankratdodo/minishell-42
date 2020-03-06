@@ -1,6 +1,7 @@
 # Minishell
 
 *As beautiful as a shell*
+
 ![](minishell.gif)
 
 ## About
